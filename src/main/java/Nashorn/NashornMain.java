@@ -7,6 +7,10 @@ import javax.script.ScriptException;
 
 /**
  * Created by valmir.justo on 3/17/15.
+ *
+ * Documentacao
+ * http://docs.oracle.com/javase/8/docs/technotes/guides/scripting/prog_guide/api.html
+ *
  */
 public class NashornMain {
 
