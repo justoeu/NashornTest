@@ -30,6 +30,20 @@ public class NashornMain {
             // Chama o Metodo criado anteriormente passando o parametro
             inv.invokeFunction("execute", "Scripting!");
 
+            // Criando um objeto no Javascript e associando o metodo ao mesmo
+            engine.eval("var obj = new Object()");
+            engine.eval("obj.helloWorld = function(name) { print('Hello, ' + name) }");
+
+            // converte o objeto Javacript em objeto Java
+            Object obj = engine.get("obj");
+
+            // Faz um Casting do Engine para o Invocable
+            inv = (Invocable) engine;
+
+            // Invoca o metodo que esta dentro do Objeto java, passando um parametro
+            inv.invokeMethod(obj, "helloWorld", "Script Method!");
+
+
         } catch (ScriptException se){
             se.printStackTrace();;
         } catch (NoSuchMethodException e) {
